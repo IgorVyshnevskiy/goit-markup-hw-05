@@ -42,6 +42,10 @@ img {
   text-decoration: none;
 }
 
+.link-pointer {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .link-pointer:hover,
 .link-pointer:focus {
   color: var(--primary-brand);
@@ -165,6 +169,26 @@ p {
   border-radius: 4px;
 }
 
+.active-page {
+  position: relative;
+}
+
+.active-page::after {
+  content: '';
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+
+  background-color: var(--primary-brand);
+  
+}
+
 /* sections */
 
 .section {
@@ -267,6 +291,8 @@ p {
   margin-bottom: 48px;
 
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-image:hover,
@@ -312,15 +338,16 @@ p {
   text-align: center;
 }
 
-.card > .item-image,
 .card > .text {
   margin-bottom: 32px;
   display: block;
 }
 
-.card > .left {
+.left {
   text-align: left;
-  margin-left: 16px;
+  padding-top: 32px;
+  padding-left: 16px;
+  padding-bottom: 32px;
 }
 
 .list-container > .filter-btn-list {
@@ -342,17 +369,20 @@ p {
 }
 
 .btn-primary {
-  border: 1px solid var(--primary-brand);
+  border: transparent;
 
   color: var(--primary-bg-color);
   background-color: var(--primary-brand);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition: bacground-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
   background-color: #404bbf;
-  border: 1px solid #404bbf;
+  border: transparent;
 }
 
 .btn-secondary {
@@ -360,11 +390,15 @@ p {
 
   color: var(--primary-brand);
   background-color: var(--light);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus {
   background-color: var(--primary-brand);
+  border: 1px solid transparent;
   color: var(--primary-bg-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -397,6 +431,9 @@ p {
   border-radius: 4px;
 
   fill: var(--sublin-text);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-link:hover,
@@ -457,9 +494,48 @@ footer.dark-bg {
 .foot-link {
   padding: 8px;
   background-color: rgba(255, 255, 255, 0.1);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .foot-link:hover,
 .foot-link:focus {
   background-color: var(--green);
 }
+
+  /* ------- OVERLAY FOR PORTFOLIO ------- */
+
+.overlay-image {
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover .overlay-text{
+transform: translateY(0);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--primary-brand);
+
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(100%);
+}
+
+.box-text {
+  text-align: start;
+  padding: 40px 32px;
+
+ color: var(--primary-bg-color);
+}
+
+
+
+
