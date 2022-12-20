@@ -510,7 +510,8 @@ footer.dark-bg {
   position: relative;
 }
 
-.card:hover .overlay-text{
+.card:hover .overlay-text,
+.card:focus .overlay-text{
 transform: translateY(0);
 }
 
