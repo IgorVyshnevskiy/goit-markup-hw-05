@@ -10,7 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css">
+    <link
+      rel="stylesheet"
+      href="node_modules/modern-normalize/modern-normalize.css"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="./modal.js" defer></script>
     <title>Studio</title>
@@ -22,7 +25,9 @@
           <span class="logo-color">WEB</span>STUDIO</a
         >
         <nav class="site-nav">
-          <a href="./index.html" class="link link-pointer active-page">Studio</a>
+          <a href="./index.html" class="link link-pointer active-page"
+            >Studio</a
+          >
           <a href="./portfolio.html" class="link link-pointer">Portfolio</a>
           <a href="" class="link link-pointer">Contacts</a>
         </nav>
@@ -42,7 +47,7 @@
           Effective Solutions <br />
           for Your Business
         </h1>
-        <button type="button" class="btn btn-primary hero-btn">
+        <button type="button" class="btn btn-primary hero-btn" data-modal-open>
           Order Service
         </button>
       </section>
@@ -555,5 +560,14 @@
         </section>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="close-modal" data-modal-close>
+          <svg width="8" height="8">
+            <use href="./images/svg/modal-icon.svg#close-icon"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
   </body>
 </html>
